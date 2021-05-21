@@ -1,11 +1,11 @@
 public class Notebook {
-        int weight;
+        int weight;//atrybuty klasy
         int price;
         int year;
 
         public Notebook(int weight, int price, int year) {
-                this.weight = weight;
-                this.price = price;
+                this.weight = weight; //przypisał wartości argumentów, które zostały mu przekazane, do atrybutów klasy.
+                this.price = price; //this wskazuje, że w ramach konstruktora chcemy odwołać się do atrybutów klasy.
                 this.year = year;
         }
 
@@ -13,7 +13,7 @@ public class Notebook {
                 if (this.price < 600) {
                         System.out.println("This notebook is very cheap.");
                 } else if (this.price >= 600 && this.price <= 1000) {
-                                System.out.println("The price is good.");
+                        System.out.println("The price is good.");
                 } else {
                         System.out.println("This notebook is expensive");
                 }
@@ -30,12 +30,32 @@ public class Notebook {
         }
 
         public void checkProfitability() {
-                if (this.year <=2012 && this.price <= 600) {
+                if (this.year <= 2012 && this.price <= 600) {
                         System.out.println("This notebook is oldest & cheapest");
-                }  else if (this.year <= 2016 && this.price <= 1000) {
+                } else if (this.year <= 2016 && this.price <= 1000) {
                         System.out.println("This notebook is medium");
-                }        else {
+                } else {
                         System.out.println("This notebook is expensive and quite new");
                 }
         }
 }
+        /*public static void main(String[] args) {
+                Notebook notebook = new Notebook(600, 1000, 2016);
+                System.out.println(notebook.weight + " " + notebook.price + " " + notebook.year);
+                notebook.checkPrice();
+                notebook.checkWeight();
+                notebook.checkProfitability();
+
+                Notebook heavyNotebook = new Notebook(2000, 1500, 2020);
+                System.out.println(heavyNotebook.weight + " " + heavyNotebook.price +" " + heavyNotebook.year);
+                heavyNotebook.checkPrice();
+                heavyNotebook.checkWeight();
+                heavyNotebook.checkProfitability();
+
+                Notebook oldNotebook = new Notebook(1600, 500, 2012);
+                System.out.println(oldNotebook.weight + " " + oldNotebook.price+ " "+ oldNotebook.year);
+                oldNotebook.checkPrice();
+                oldNotebook.checkWeight();
+                oldNotebook.checkProfitability();
+
+        } */
