@@ -14,6 +14,12 @@ public class Application {
         rectangle.pole();
         rectangle.obwod();
 
+        Policeman policeman = new Policeman();
+        policeman.show();
+
+        Killer killer = new Killer();
+        killer.show();
+
     }
 
 }

@@ -5,9 +5,9 @@ public class Square extends Shape {
         super(4,4);
     }
     @Override
-    public void pole() {System.out.println(getSideShorter()*getLongerShorter());
+    public void pole() {System.out.println("Pole kwadratu wynosi "+getSideShorter()*getLongerShorter());
     }
 
     @Override
-    public void obwod() {System.out.println(2*getSideShorter() + 2*getLongerShorter());}
+    public void obwod() {System.out.println("Obwód kwadratu wynosi "+2*(getSideShorter() + getLongerShorter()));}
 }

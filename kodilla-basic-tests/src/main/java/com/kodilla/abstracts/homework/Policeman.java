@@ -5,7 +5,7 @@ public class Policeman extends Job {
         super(4000,"save");
     }
     @Override
-    public void resp() {System.out.println(getResponsibilities());
+    public void show() {System.out.println("One of the Policeman task is " + getResponsibilities());
     }
 
 }

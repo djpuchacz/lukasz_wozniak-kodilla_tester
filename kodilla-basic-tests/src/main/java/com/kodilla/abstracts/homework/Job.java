@@ -17,7 +17,6 @@ public abstract class Job {
         return responsibilities;
     }
 
-    public abstract void resp();
-
+    public abstract void show();
 
 }

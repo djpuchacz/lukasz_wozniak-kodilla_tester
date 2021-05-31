@@ -6,8 +6,8 @@ public class Triangle extends Shape {
     }
     @Override
     public void pole() {
-        System.out.println(((getSideShorter()*getLongerShorter()*Math.sqrt(getSideShorter()))/4));}
-
+        System.out.println("Pole trójkąta wynosi " + ((getSideShorter() * getLongerShorter() * Math.sqrt(getSideShorter())) / 4));
+    }
     @Override
-    public void obwod() {System.out.println(3*getSideShorter());}
+    public void obwod() {System.out.println("Obwód trójkąta wynosi "+3*getSideShorter());}
 }
