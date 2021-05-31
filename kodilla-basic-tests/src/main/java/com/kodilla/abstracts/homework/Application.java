@@ -20,6 +20,9 @@ public class Application {
         Killer killer = new Killer();
         killer.show();
 
+        Developer developer = new Developer();
+        developer.show();
+
     }
 
 }
