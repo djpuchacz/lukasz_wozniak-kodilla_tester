@@ -14,40 +14,48 @@ public class Bank {
         this.items = newTab;
     }
 
-    public int countBalance() { //całkowity bilans ze wszystkich bankomatów,
-        int sum = 0;
+    public int countTotalBalance() { //całkowity bilans ze wszystkich bankomatów,
+        int balance = 0;
         for (CashMachine item : items) {
-            sum = sum + item.cashMachineSaldo();
+            balance = balance + item.cashMachineSaldo();
         }
-        return sum;
+        return balance;
     }
 
-    public int countCashOut() { //liczbę transakcji związanych z wypłatą,
-        int sum = 0;
+    public int countTotalCashOut() { //liczba transakcji związanych z wypłatą pieniędzy z wszystkich bankomatów
+        int NoOfTotalCashOut = 0;
         for (CashMachine item : items) {
-        sum = sum + item.noOfTransactionsCashOut();}
-        return sum;
+            NoOfTotalCashOut = NoOfTotalCashOut + item.noOfTransactionsCashOut();}
+        return NoOfTotalCashOut;
     }
 
-    public int countCashIn() { //liczbę transakcji związaną z wpłatą pieniędzy,
-        int sum = 0;
+    public int countTotalCashIn() { //liczbę transakcji związaną z wpłatą pieniędzy z wszystkich bankomatów
+        int NoOfTotalCashIn = 0;
         for (CashMachine item : items) {
-            sum = sum + item.noOfTransactionsCashIn();}
-        return sum;
+            NoOfTotalCashIn = NoOfTotalCashIn + item.noOfTransactionsCashIn();}
+        return NoOfTotalCashIn;
     }
-    public int sumCashOut() { //
-        int sum = 0;
+    public int sumTotalCashOut() { // metoda zwracająca sumę wartości wypłat ze wszystkich bankomatów
+        int sumTotalOut = 0;
         for (CashMachine item : items) {
-            sum = sum + item.sumOfCashOut();
+            sumTotalOut = sumTotalOut + item.sumOfCashOut();
         }
-        return sum;
+        return sumTotalOut;
+    }
+    public int sumTotalCashIn() {// metoda zwracająca sumę wartości wpłat ze wszystkich bankomatów
+        int sumTotalIn = 0;
+        for (CashMachine item : items) {
+            sumTotalIn = sumTotalIn + item.sumOfCashIn();
+        }
+        return sumTotalIn;
+         }
+
+    public double avgTotalCashOut() { //średnią wartość wypłaty ze wszystkich bankomatów
+        return sumTotalCashOut()/countTotalCashOut();
     }
 
-    public int avgCashOut() { //średnią wartość wypłaty,
-        return sumCashOut()/countCashOut();
-    }
-
-    public void avgCashIn() { //średnią wartość wpłaty,
+    public double avgTotalCashIn() { //średnią wartość wpłaty we wszystkich bankomatach
+        return sumTotalCashIn()/countTotalCashIn();
 
     }
 }
