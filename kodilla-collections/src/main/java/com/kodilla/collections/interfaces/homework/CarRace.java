@@ -11,7 +11,7 @@ public class CarRace {
             Audi audi = new Audi(60);
             doRace(audi);
         }
-        private static void doRace (Car car) {
+        private static void doRace(Car car) {
             System.out.println(car.increaseSpeed());
             System.out.println(car.increaseSpeed());
             System.out.println(car.increaseSpeed());

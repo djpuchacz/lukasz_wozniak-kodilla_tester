@@ -5,21 +5,17 @@ public class Ford implements Car {
 
     public Ford(int speed) {
         this.speed = speed;
-
     }
-
     @Override
     public int getSpeed() {
         return speed;
     }
-
     @Override
-    public int increaseSpeed() {
-        return speed + 20;
+    public void increaseSpeed() {
+        speed = speed + 20;
     }
-
     @Override
-    public int decreaseSpeed() {
-        return speed - 15;
+    public void decreaseSpeed() {
+        speed = speed - 30;
     }
 }
