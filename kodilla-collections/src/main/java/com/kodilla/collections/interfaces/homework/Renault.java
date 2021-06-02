@@ -18,4 +18,11 @@ public class Renault implements Car {
     public void decreaseSpeed() {
         speed = speed - 40;
     }
+
+    @Override
+    public String toString() {
+        return "Renault{" +
+                "speed=" + speed +
+                '}';
+    }
 }
