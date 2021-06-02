@@ -12,12 +12,13 @@ public class CarRace {
             doRace(audi);
         }
         private static void doRace(Car car) {
-            System.out.println(car.increaseSpeed());
-            System.out.println(car.increaseSpeed());
-            System.out.println(car.increaseSpeed());
-            System.out.println(car.decreaseSpeed());
-            System.out.println(car.decreaseSpeed());
+            car.increaseSpeed();
+            car.increaseSpeed();
+            car.increaseSpeed();
+            car.decreaseSpeed();
+            car.decreaseSpeed();
             System.out.println(car.getSpeed());
+
         }
 }
 
