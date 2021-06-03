@@ -11,5 +11,4 @@ public class Calculator {
     public double exp(double a) {
         return a*a;
     }
-    //public boolean delta();
 }
