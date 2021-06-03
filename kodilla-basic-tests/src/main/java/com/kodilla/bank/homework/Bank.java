@@ -50,11 +50,11 @@ public class Bank {
         return sumTotalIn;
          }
 
-    public double avgTotalCashOut() { //średnią wartość wypłaty ze wszystkich bankomatów
+    public double avgTotalCashOut() { //średnia wartość wypłaty ze wszystkich bankomatów
         return sumTotalCashOut()/countTotalCashOut();
     }
 
-    public double avgTotalCashIn() { //średnią wartość wpłaty we wszystkich bankomatach
+    public double avgTotalCashIn() { //średnia wartość wpłaty we wszystkich bankomatach
         return sumTotalCashIn()/countTotalCashIn();
 
     }

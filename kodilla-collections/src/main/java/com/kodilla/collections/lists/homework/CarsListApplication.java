@@ -1,5 +1,6 @@
 package com.kodilla.collections.lists.homework;
 
+import com.kodilla.collections.arrays.homework.CarUtils;
 import com.kodilla.collections.interfaces.homework.Audi;
 import com.kodilla.collections.interfaces.homework.Car;
 import com.kodilla.collections.interfaces.homework.Ford;
@@ -24,5 +25,8 @@ public class CarsListApplication {
             System.out.println(cars.get(n));
 
         System.out.println("Aktualny rozmiar kolekcji to: " + cars.size());
+        for (Car car : cars) {
+                CarUtils.describeCar(car);
+            }
     }
 }

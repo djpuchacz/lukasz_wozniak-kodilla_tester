@@ -24,7 +24,7 @@ public class CashMachine {
         return saldo;
     }
 
-    public int noOfTransactions() { //metoda zwracająca liczbę transakcji (długość tablicy ?)
+    public int noOfTransactions() { //metoda zwracająca liczbę transakcji (rozmiar tablicy ?)
         return this.size;
     }
     public int noOfTransactionsCashOut() { //metoda zwracająca liczbę transakcji związanych z wypłatą z bankomatu
@@ -64,5 +64,6 @@ public class CashMachine {
     public int[] getValues() {
         return values;
     }
+
 }
 

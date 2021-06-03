@@ -14,7 +14,7 @@ public class CashMachineSuite {
         }
 
     @Test
-        public void shouldAddTwoElementsToArray() {
+        public void shouldAddTwoElementsToArrayPositiveAndNegative() {
         CashMachine cashMachine = new CashMachine();
         cashMachine.add(500);
         cashMachine.add(-100);
@@ -23,5 +23,10 @@ public class CashMachineSuite {
         assertEquals(2, values.length);
         assertEquals(500, values[0]);
         assertEquals(-100, values[1]);
+    }
+    @Test
+    public void should() {
+        CashMachine cashMachine = new CashMachine();
+
     }
 }
