@@ -8,19 +8,19 @@ public class CalculatorTestSuite {
     @Test
     public void testSum() {
         Calculator calculator = new Calculator();
-        double a = 5;
-        double b = 8;
+        double a = 5.5;
+        double b = 8.5;
         double sumResult = calculator.sum(a, b);
-        assertEquals(13, sumResult);
+        assertEquals(14, sumResult,0.01);
 
     }
     @Test
     public void testSub() {
         Calculator calculator = new Calculator();
-        double a = 5;
-        double b = 8;
+        double a = 5.5;
+        double b = 8.5;
         double subtractResult = calculator.subtract(a, b);
-        assertEquals(-3, subtractResult);
+        assertEquals(-3, subtractResult,0.01);
     }
 
     @Test
