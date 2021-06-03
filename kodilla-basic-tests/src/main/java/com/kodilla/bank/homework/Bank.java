@@ -51,11 +51,16 @@ public class Bank {
          }
 
     public double avgTotalCashOut() { //średnia wartość wypłaty ze wszystkich bankomatów
-        return sumTotalCashOut()/countTotalCashOut();
+        if(countTotalCashOut()==0)
+            return 0;
+
+        return sumTotalCashOut()/(double)countTotalCashOut();
     }
 
     public double avgTotalCashIn() { //średnia wartość wpłaty we wszystkich bankomatach
-        return sumTotalCashIn()/countTotalCashIn();
-
+        if(countTotalCashIn()==0)
+            return 0;
+        return sumTotalCashIn()/(double)countTotalCashIn();
     }
+
 }
