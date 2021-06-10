@@ -26,10 +26,7 @@ public class Book {
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
 
-        /*if (getTitle() != null ? !getTitle().equals(book.getTitle()) : book.getTitle() != null) return false;
-        return getAuthor() != null ? getAuthor().equals(book.getAuthor()) : book.getAuthor() == null;
 
-         */
 
         return Objects.equals(author, book.author) && Objects.equals(title, book.title);
     }

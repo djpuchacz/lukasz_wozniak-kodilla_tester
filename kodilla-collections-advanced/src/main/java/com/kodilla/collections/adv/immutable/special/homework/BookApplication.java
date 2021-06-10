@@ -3,16 +3,16 @@ package com.kodilla.collections.adv.immutable.special.homework;
 public class BookApplication {
     public static void main(String[] args) {
         BookManager bookManager = new BookManager();
-        bookManager.createBook("40 dni", "Jan Kowalski");
-        System.out.println("nr 1 to " + bookManager);
+        Book created = bookManager.createBook("40 dni", "Jan Kowalski");
+        //System.out.println("nr 1 to " + created);
 
         BookManager bookManager2 = new BookManager();
         bookManager.createBook("Noce i dnie", "Eliza Orzeszkowa");
-        System.out.println("nr 2 to " + bookManager2);
+
 
         BookManager bookManager3 = new BookManager();
         bookManager.createBook("Lalka", "Bolesław Prus");
-        System.out.println("nr 3 to " + bookManager3);
+
 
         Book bookOne = new Book("Pan Tadeusz", "Adam Mickiewicz");
         BookManager.library.add(bookOne);

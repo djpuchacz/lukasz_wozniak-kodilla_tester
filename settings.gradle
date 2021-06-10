@@ -8,4 +8,5 @@ include 'kodilla-basic-testsuntitled'
 include 'kodilla-basic-tests'
 include 'kodilla-collections'
 include 'kodilla-collections-advanced'
+include 'kodilla-stream'
 
