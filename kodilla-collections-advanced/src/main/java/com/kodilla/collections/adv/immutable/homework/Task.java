@@ -1,6 +1,6 @@
 package com.kodilla.collections.adv.immutable.homework;
 
-public final class Task {
+public class Task {
     protected String title;
     protected int duration;
 
