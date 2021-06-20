@@ -11,8 +11,19 @@ public class Book {
         return book;
 
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                '}';
+    }
+
     public static void main(String[] args) {
+
         Book book = Book.of("Isaac Asimov", "The Galaxy");
+        System.out.println(book);
     }
 }
 

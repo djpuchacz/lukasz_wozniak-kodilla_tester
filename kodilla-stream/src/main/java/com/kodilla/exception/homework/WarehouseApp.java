@@ -12,8 +12,10 @@ public class WarehouseApp {
 
         //doesOrderExist("item3", warehouse);
         doesOrderExist("item9", warehouse);
+
+
     }
-    private static void doesOrderExist (String orderNumber, Warehouse warehouse){
+    public static void doesOrderExist (String orderNumber, Warehouse warehouse){
         try {
             Order order = warehouse.getOrder(orderNumber);
             System.out.println("Znaleziono zamówienie numer: " + order.getNumber());
@@ -21,6 +23,5 @@ public class WarehouseApp {
             System.out.println("Zamówienie numer: " + orderNumber + " nie istnieje");
         }
     }
-
 }
 

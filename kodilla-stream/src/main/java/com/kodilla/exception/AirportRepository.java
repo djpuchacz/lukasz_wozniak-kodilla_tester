@@ -14,7 +14,7 @@ public class AirportRepository {
     }
     public boolean isAirportInUse(String airport) throws AirportNotFoundException {
         /*throws ... oznacza że nasza metoda może rzucać wyjątkiem, obsługa
-        wyjątku zostanie przeniesiona do miejsca w kóeym metoda isAirportInUse( in use będzie wywoływana)
+        wyjątku zostanie przeniesiona do miejsca w którym metoda isAirportInUse( in use będzie wywoływana)
         */
 
         if (getListOfAirports().containsKey(airport))

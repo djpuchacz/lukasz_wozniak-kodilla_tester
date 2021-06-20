@@ -10,7 +10,7 @@ public class Warehouse {
         orders.add(order);
    }
 
-   public Order getOrder(String number) throws OrderDoesntExistException {
+    public Order getOrder(String number) throws OrderDoesntExistException {
                 return orders
                 .stream()
                 .filter(u->u.getNumber().equals(number))
