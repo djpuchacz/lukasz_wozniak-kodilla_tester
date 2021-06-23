@@ -9,7 +9,7 @@ public class UserDialogs {
             System.out.println("Enter number of rounds:");
             String s = scanner.nextLine();
             try {
-                int rounds = Integer.parseInt(s);
+                int rounds = Integer.parseInt(s); //metoda Integer.parseInt(), konwertująca typ String na typ int
                 return rounds;
             } catch (Exception e) {
                 System.out.println("Wrong data. Enter only digits. Try again.");

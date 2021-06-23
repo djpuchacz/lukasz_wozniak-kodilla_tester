@@ -10,11 +10,13 @@ public class BasicMapExample {
         grades.put("Physics", 4.5);
         grades.put("Philosophy", 4.0);
 
-        Double grade = grades.get("Mathematics");
+        Double grade = grades.get("Mathematics"); //get(Object key) — zwraca wartość związaną z podanym kluczem key
         System.out.println(grade);
 
-        for(Map.Entry<String, Double> note : grades.entrySet()) {
-            System.out.println("Grade of " + note.getKey() + " is equal to " + note.getValue());
+        for (Map.Entry<String, Double> note : grades.entrySet()) {
+            System.out.println("Grade of " + note.getKey() + "is equal to " + note.getValue());
+
+
         }
     }
 }

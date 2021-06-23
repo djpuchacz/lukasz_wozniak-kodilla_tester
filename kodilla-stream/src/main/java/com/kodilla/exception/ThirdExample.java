@@ -8,7 +8,7 @@ public class ThirdExample {
             System.out.println("Vienna status: " + isViennaInUse);
         } catch (AirportNotFoundException e) {
             System.out.println("Sorry, this airport cannot be served by our airlines.");
-        } finally {
+        } finally { //wykonuje się zawsze, niezaleznie czy metoda zadziała czy rzuci wyjątkiem
             System.out.println("Thank you for using Kodilla Airlines");
         }
     }
