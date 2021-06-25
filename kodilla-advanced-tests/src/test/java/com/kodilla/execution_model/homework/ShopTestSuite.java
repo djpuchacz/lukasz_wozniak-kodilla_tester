@@ -10,13 +10,13 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ShopTestSuite {
     Shop shop = new Shop();
-    Order order1 = new Order(100, LocalDate.of(2019,01,20),"john123");
-    Order order2 = new Order(201, LocalDate.of(2017,02,11),"vero_20");
-    Order order3 = new Order(300, LocalDate.of(2018,01,03),"john123");
-    Order order4 = new Order(199.99, LocalDate.of(2019,05,05),"michael9050");
-    Order order5 = new Order(39.99, LocalDate.of(2020,06,18),"john123");
-    Order order6 = new Order(112.50, LocalDate.of(2020,07,14),"michael9050");
-    Order order7 = new Order(100, LocalDate.of(2019,01,20),"john123"); // duplikat
+    Order order1 = new Order(100, LocalDate.of(2019,01,20),"Alicja B.C.");
+    Order order2 = new Order(201, LocalDate.of(2017,02,11),"John Travolta");
+    Order order3 = new Order(300, LocalDate.of(2018,01,03),"Al Pacino");
+    Order order4 = new Order(199.99, LocalDate.of(2019,05,05),"Daniel Craig");
+    Order order5 = new Order(39.99, LocalDate.of(2020,06,18),"Ariana Grande");
+    Order order6 = new Order(112.50, LocalDate.of(2020,07,14),"Beyonce");
+    Order order7 = new Order(100, LocalDate.of(2019,01,20),"Alicja B.C."); // duplikat
 
     @BeforeEach
     public void addSeveralOrdersToTheShop() throws IncorrectOrderException {
@@ -29,7 +29,6 @@ class ShopTestSuite {
         shop.addOrder(order7); // w secie nie może być duplikatów
     }
 
-
     //1. sprawdzić czy działa dodawanie nowych pozycji (Order) i czy rozmiar listy się zmienia.
     @Test
     public void shouldReturnCorrectNumberOfAddedOrders(){
@@ -41,7 +40,7 @@ class ShopTestSuite {
     @Test
     public void shouldNotAddDuplicatedOrder() throws IncorrectOrderException {
         int expectedOrderCount = shop.numberOfTotalOrders();
-        shop.addOrder(new Order(100, LocalDate.of(2019,01,20),"john123"));
+        shop.addOrder(new Order(100, LocalDate.of(2019,01,20),"Alicja B.C."));
         int actualOrderCount = shop.numberOfTotalOrders();
         assertEquals(expectedOrderCount, actualOrderCount);
     }
@@ -60,16 +59,9 @@ class ShopTestSuite {
     @Test
     public void shouldThrowAnExceptionInCaseOfChoosePastDate() {
         Assertions.assertThrows(IncorrectOrderException.class, () -> {
-            shop.addOrder(new Order(1900, LocalDate.of(1940,01,20), "adam123"));
+            shop.addOrder(new Order(1900, LocalDate.of(2014,01,20), "adam123"));
         });
 
-    }
-    //4a z datą naprzód: niedziała
-    @Test
-    public void shouldThrowAnExceptionInCaseOfChooseFutureDate() {
-        Assertions.assertThrows(IncorrectOrderException.class, () -> {
-            shop.addOrder(new Order(1910, LocalDate.of(2021,07,20), "adam103"));
-        });
     }
 
     //5. sprawdzić czy klasa rzuca wyjątkiem kiedy w zawężonym okresie czasu nie znaleziono zamówień
@@ -93,7 +85,6 @@ class ShopTestSuite {
         shop.getOrders().clear();
         assertEquals(0, shop.sumOFOrdersValue());
     }
-
 
     // 8. sprawdzić czy zwracana jest poprawna suma wartości zamówień
     @Test

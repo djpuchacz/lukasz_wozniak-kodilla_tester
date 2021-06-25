@@ -38,7 +38,7 @@ public class Shop {
     //dodanie nowego zamówienia:
     public void addOrder(Order order) throws IncorrectOrderException {
         if(order.getOrderValue() >= 0 && order.getOrderBy() != null && order.getOrderBy() != "" && order.getOrderDate() != null){
-            if(order.getOrderDate().getYear() > 1940 && order.getOrderDate().getYear() <= LocalDate.now().getYear() ){
+            if(order.getOrderDate().getYear() > 2015 && order.getOrderDate().getYear() <= LocalDate.now().getYear() ){
                 this.orders.add(order);
             } else {
                 throw new IncorrectOrderException("Incorrect order date");
