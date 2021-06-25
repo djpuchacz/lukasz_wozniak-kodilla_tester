@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class PersonSources {
 
-    static Stream<Arguments> provideRightDataForTestingBMI() {
+    static Stream<Arguments> provideDataForTestingBMI() {
         return Stream.of(
                 Arguments.of(new Person(1.76, 50.9)),
                 Arguments.of(new Person(1.55, 65.8)),
@@ -17,16 +17,6 @@ public class PersonSources {
         );
     }
 
-    /*static Stream<Arguments> provideWrongDataForTestingBMI() {
-        return Stream.of(
-                Arguments.of(new Person(0, 0)),
-                Arguments.of(new Person(1.50, 0)),
-                Arguments.of(new Person(0, 50))
 
-        );
-
-    }
-
-     */
 }
 
