@@ -1,5 +1,7 @@
 package com.kodilla.parametrized_tests.homework;
 
+import java.util.Objects;
+
 public class Person {
 
 
@@ -35,5 +37,26 @@ public class Person {
             return "Obese Class V (Super Obese)";
         }
         return "Obese Class VI (Hyper Obese)";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return Double.compare(person.heightInMeters, heightInMeters) == 0 && Double.compare(person.weightInKilogram, weightInKilogram) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(heightInMeters, weightInKilogram);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "heightInMeters=" + heightInMeters +
+                ", weightInKilogram=" + weightInKilogram +
+                '}';
     }
 }
