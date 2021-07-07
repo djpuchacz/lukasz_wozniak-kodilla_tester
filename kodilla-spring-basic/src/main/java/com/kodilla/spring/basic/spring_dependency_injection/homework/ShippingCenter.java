@@ -1,19 +1,16 @@
 package com.kodilla.spring.basic.spring_dependency_injection.homework;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Autowired;;
 import org.springframework.stereotype.Component;
 
 @Component
 public class ShippingCenter {
-    @Autowired
 
+    @Autowired
     private DeliveryInterface deliveryInterface;
-    @Autowired
 
+    @Autowired
     private NotificationInterface notificationInterface;
 
-        // tutaj dodaj odpowiednie wstrzykiwanie zależności
 
     public String sendPackage(String address, double weight) {
         if (deliveryInterface.deliverPackage(address, weight)) {
