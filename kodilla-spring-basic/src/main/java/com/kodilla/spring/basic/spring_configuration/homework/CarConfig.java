@@ -23,14 +23,14 @@ public class CarConfig {
             default:
                 car = new Sedan();
         }
-        if(hour >=20 || hour <= 6){
+        if(hour >=20 && hour <= 6){
             car.lightsOn();
         } else {
             car.lightsOff();
         }
         return car;
     }
-       private static final String seasons[] = { //spróbować enuma lub losowaniem
+       private static String seasons[] = { //spróbować enuma
             "Winter", "Winter", "Spring", "Spring", "Summer", "Summer",
             "Summer", "Summer", "Autumn", "Autumn", "Winter", "Winter"
     };
