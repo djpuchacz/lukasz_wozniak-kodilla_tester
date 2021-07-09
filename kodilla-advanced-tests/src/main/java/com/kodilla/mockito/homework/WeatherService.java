@@ -8,13 +8,7 @@ import java.util.*;
 public class WeatherService {
     private HashMap<Location, Set<Client>> users = new HashMap<>();
 
-    /*public void addLocation(Location location) {
-        users.put(location, new HashSet<Client>());
-    }
-
-     */
-
-    //1. Osoba zainteresowana może zostać zapisana do danej lokalizacji i zacznie otrzymywać powiadomienia.//OK
+    //1. Osoba zainteresowana może zostać zapisana do danej lokalizacji i zacznie otrzymywać powiadomienia.
     public void addSubscriber(Client client, Location location) {
         //nie istnieje lokalizacja:
         if(users.containsKey(location)) {
@@ -28,7 +22,7 @@ public class WeatherService {
         }
     }
 
-    //5. Możliwość wysyłki powiadomienia do wszystkich.//OK
+    //5. Możliwość wysyłki powiadomienia do wszystkich.
     public void sendNotificationToAll(Notification notification) {
         Collection<Set<Client>> values = users.values();
         Set<Client> temp = new HashSet<>();
@@ -38,21 +32,17 @@ public class WeatherService {
         for (Client u : temp) {
             u.receive(notification);
         }
-//a) dwóch klientów w dwóch różnych lokalizacjach otrzymują powiadomienia
-        //b) ten sam klient w dwóch różnych lokalizacjach otrzymuj jedno powiadomienie
+
     }
 
-    //4. Powiadomienie dla osób w danej lokalizacji powinno dotrzeć tylko do określonej grupy osób./OK
+    //4. Powiadomienie dla osób w danej lokalizacji powinno dotrzeć tylko do określonej grupy osób.
     public void sendNotificationToLocation(Location location, Notification notification) {
         if (users.containsKey(location))  //czy istnieje lokalizacja
             this.users.get(location).forEach(client -> client.receive(notification));
 
     }
-    //1. wysłanie do lokalizacji istniejącej po po dodaniu klienta
-    //2. wysłanie do lokalizacji nieistniejącej (innej)
 
-
-    //2. Można wycofać subskrypcję z danej lokalizacji.//dodać wycofanie subskrypcji z niestniejącej lokalizacji
+    //2. Można wycofać subskrypcję z danej lokalizacji.
     public void removeSubscriptionFromLocation(Client client, Location location) {
        if(users.containsKey(location))
            this.users.get(location).remove(client);
@@ -63,13 +53,10 @@ public class WeatherService {
         for (Location location : users.keySet())
             users.get(location).remove(client);
     }
-    //dodanie klienta do dwoch lokalizacji , usuniećie klienta, i sprawdzenie czy nie dostaje powiadomień
 
     //6. Możliwość skasowania danej lokalizacji.
     public void removeLocation(Location location) {
         users.remove(location);
     }
-    //dodanie lokalizacji, usunięcie lokalizacji, wysłanie notyfikacji to tej lokalizacji
-
 
 }

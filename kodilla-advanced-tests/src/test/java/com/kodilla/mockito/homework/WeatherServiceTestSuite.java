@@ -17,7 +17,6 @@ public class WeatherServiceTestSuite {
 
     @BeforeEach
     public void starterInput() {
-        //weatherService.addLocation(location);
         weatherService.addSubscriber(client, location);
     }
 
@@ -27,11 +26,9 @@ public class WeatherServiceTestSuite {
         Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
 
-
     @Test
     public void notSubscribedToLocationShouldNotReceiveNotification() {
         Location location2 = Mockito.mock(Location.class);
-        //weatherService.addLocation(location2);
         Client client2 = Mockito.mock(Client.class);
         Client client3 = Mockito.mock(Client.class);
         weatherService.addSubscriber(client2, location2);
@@ -42,34 +39,34 @@ public class WeatherServiceTestSuite {
         Mockito.verify(client3, Mockito.times(1)).receive(notification);
     }
 
+
     @Test
-    public void subscriberShouldBeAbleToCancelSubscriptionFromLocation() {
+    public void clientShouldBeAbleToCancelSubscriptionFromExistingLocation() {
         weatherService.removeSubscriptionFromLocation(client, location);
         weatherService.sendNotificationToLocation(location, notification);
         Mockito.verify(client, Mockito.never()).receive(notification);
     }
 
+
+    @Test //wycofanie subskrypcji z niezabskrybowanej lokalizacji
+    public void clientShouldNotBeAbleToCancelSubscriptionFromNotSubscribedLocation() {
+            Location location4 = Mockito.mock(Location.class);
+            weatherService.removeSubscriptionFromLocation(client, location4);
+            Mockito.verify(client, Mockito.never()).receive(notification);
+    }
+
     @Test
-    public void subscriberShouldBeAbleToCancelSubscriptionFromAllLocations() {
+    public void clientShouldBeAbleToCancelSubscriptionFromAllLocations() {
         Location location2 = Mockito.mock(Location.class);
-        //weatherService.addLocation(location2);
         Location location3 = Mockito.mock(Location.class);
-        //weatherService.addLocation(location3);
         weatherService.addSubscriber(client, location2);
         weatherService.addSubscriber(client, location3);
         weatherService.removeAllSubscriptions(client);
         weatherService.sendNotificationToLocation(location, notification);
         Mockito.verify(client, Mockito.never()).receive(notification);
     }
-    //usuwanie lokalizacji removelocation
-    @Test
-    public void locationShouldBeRemoved() {
-        weatherService.removeLocation(location);
-        weatherService.sendNotificationToLocation(location, notification);
-        Mockito.verify(client, Mockito.never()).receive(notification);
-    }
-    //dwóch klientów w dwóch różnych lokalizacjach otrzymują powiadomienia
 
+    //dwóch klientów w dwóch różnych lokalizacjach otrzymują powiadomienia
     @Test
     public void shouldDifferentClientsInDifferentLocalisationReceivedNotifications() {
         Client client2 = Mockito.mock(Client.class);
@@ -80,30 +77,49 @@ public class WeatherServiceTestSuite {
         Mockito.verify(client2, Mockito.times(1)).receive(notification);
     }
 
-    //ten sam klient w dwóch różnych lokalizacjach otrzymuj jedno powiadomienie
+    //ten sam klient w dwóch różnych lokalizacjach otrzymuje jedno powiadomienie
     @Test
-    public void shouldTheSameClientInDifferentLocalisationsReceivedOnlyOneNotification() {
+    public void shouldTheSameClientInDifferentLocationsReceivedOnlyOneNotification() {
         Location location2 = Mockito.mock(Location.class);
         weatherService.addSubscriber(client, location2);
         weatherService.sendNotificationToAll(notification);
         Mockito.verify(client, Mockito.times(1)).receive(notification);
 
     }
-    ///1. wysłanie do lokalizacji istniejącej po po dodaniu klienta
+    //wysłanie do lokalizacji istniejącej
     @Test
-    public void shouldSendNotificationToLocalisationIfClientSubscribed(){
-       weatherService.addSubscriber(client, location);
+    public void shouldSendNotificationToLocalisationIfClientIsSubscribed(){
        weatherService.sendNotificationToLocation(location, notification);
        Mockito.verify(client, Mockito.times(1)).receive(notification);
     }
 
-    //2. wysłanie do lokalizacji nieistniejącej (innej)
+    //wysłanie do niezasubskrybowanej lokalizacji (innej)
     @Test
-    public void shouldSendNotificationToLocalisationIfClientNotSubscribed(){
-        weatherService.addSubscriber(client, location);
+    public void shouldNotSendNotificationToLocationIfClientIsNotSubscribed(){
         Location location2 = Mockito.mock(Location.class);
         weatherService.sendNotificationToLocation(location2, notification);
         Mockito.verify(client, Mockito.times(0)).receive(notification);
     }
 
+
+    //dodanie klienta do dwoch lokalizacji , usuniećie klienta, i sprawdzenie czy nie dostaje powiadomień
+    @Test
+    public void clientShouldBeAbleToCancelAllSubscriptions() {
+        Location location2 = Mockito.mock(Location.class);
+        Location location3 = Mockito.mock(Location.class);
+        weatherService.addSubscriber(client, location2);
+        weatherService.addSubscriber(client, location3);
+        weatherService.removeAllSubscriptions(client);
+        weatherService.sendNotificationToAll(notification);
+        Mockito.verify(client, Mockito.never()).receive(notification);
+    }
+
+    //dodanie lokalizacji, usunięcie lokalizacji, wysłanie notyfikacji to tej lokalizacji
+    @Test
+    public void shouldRemoveLocation() {
+        weatherService.addSubscriber(client, location);
+        weatherService.removeLocation(location);
+        weatherService.sendNotificationToLocation(location, notification);
+        Mockito.verify(client, Mockito.times(0)).receive(notification);
+    }
 }
