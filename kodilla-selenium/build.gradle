@@ -14,6 +14,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
     testCompile group: 'junit', name: 'junit', version: '5.3'
+    compile(group: 'com.github.lewka', name: 'ocular', version: '1.0.5'){
+        exclude group: "net.sf", module: "jargs"
+    }
 }
 
 test {
