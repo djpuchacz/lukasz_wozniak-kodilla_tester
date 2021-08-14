@@ -7,7 +7,7 @@ public class WalletSteps implements En {
 
     private Wallet wallet = new Wallet();
     private CashSlot cashSlot = new CashSlot();
-    Cashier cashier = new Cashier(cashSlot);
+    private Cashier cashier = new Cashier(cashSlot);
 
     public WalletSteps() {
         Given("I have deposited $200 in my wallet", () -> {
@@ -16,7 +16,6 @@ public class WalletSteps implements En {
         });
 
         When("I request $30", () -> {
-
             cashier.withdraw(wallet, 30);
         });
 
