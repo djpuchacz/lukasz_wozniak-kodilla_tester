@@ -23,24 +23,22 @@ public class GoogleSearch extends AbstractPage {
         super(driver);
     }
 
-    public void searchResults() {
+    public void searchResults() throws InterruptedException {
         /*
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
-        WebDriver driver = new ChromeDriver();
-        driver.navigate().to("http://www.google.com");
-
         //akceptacja ciasteczek:
         WebElement cookiesField = driver.findElement(By.cssSelector("#L2AGLb > div"));
         cookiesField.click();
         */
-        PageFactory.initElements(driver, GoogleSearch.class);
-        inputField.sendKeys("Kodilla");
+
+        PageFactory.initElements(driver, GoogleSearch.class); //inicjalizujemy obiekty na stronie,
+        Thread.sleep(3000);
+        inputField.sendKeys("Kodilla"); //w pole wyszukiwania wpisujemy "Kodilla",
         googleResults = loadResults(driver);
         googleResults.iSeeResults();
 
     }
 
-    public static GoogleResults loadResults(WebDriver driver) {
+    public GoogleResults loadResults(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(searchButton.get(0))).click();
         GoogleResults googleResults = new GoogleResults(driver);

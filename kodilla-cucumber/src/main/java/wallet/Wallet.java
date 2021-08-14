@@ -12,7 +12,16 @@ public class Wallet {
     }
 
     public int getBalance() { //metoda zwracająca saldo
+
         return balance;
     }
 
+    public void debit(int money)  //metoda pozwalająca na pomniejszenie stanu konta
+    {//if
+        this.balance -= money;
+    }
+
+    public String currentBalance(){
+        return "Your current balance is $" + balance;
+    }
 }
