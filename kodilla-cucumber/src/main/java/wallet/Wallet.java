@@ -14,4 +14,5 @@ public class Wallet {
     public int getBalance() { //metoda zwracająca saldo
         return balance;
     }
+
 }

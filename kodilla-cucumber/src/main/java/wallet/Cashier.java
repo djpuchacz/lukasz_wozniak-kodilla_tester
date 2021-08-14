@@ -8,6 +8,6 @@ public class Cashier {
     }
 
     public void withdraw(Wallet wallet, int amount) { //kasjer uzupełnia przekazaną kasetkę
-        cashSlot.dispense(amount);
+       cashSlot.dispense(amount);
     }
 }
