@@ -26,6 +26,10 @@ public class GoogleResults extends AbstractPage {
     }
 
     public void getResults(){
+        /*
+        Dopisz kod, który będzie wybierał losowo jeden z wyników wyszukiwania.
+        Wynik będzie klikany i otworzy się nowa strona z wybranym wynikiem wyszukiwania, który powinien być oddzielnym Page objectem
+         */
         Random random = new Random();
         int number = random.nextInt(results.size()-1);
         WebElement element = results.get(number);
