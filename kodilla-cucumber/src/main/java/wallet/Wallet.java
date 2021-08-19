@@ -2,6 +2,8 @@ package wallet;
 
 public class Wallet {
     private int balance = 0;
+    private int display;
+    private int initialBalance;
 
     public Wallet() {
 
@@ -21,7 +23,21 @@ public class Wallet {
         this.balance -= money;
     }
 
-    public String currentBalance(){
-        return "Your current balance is $" + balance;
+    public void displayBalance (int currentMoney) {
+        this.display = currentMoney;
     }
+
+    public int getInitialBalance () {
+        this.initialBalance = display;
+        return initialBalance;
+    }
+
+    public String withdrawFromWallet(int money) {
+        if (money > getInitialBalance()) {
+            return "You don't have enough money in your wallet !";
+        }
+        else
+            return "You have just withdrawn money.";
+        }
+
 }

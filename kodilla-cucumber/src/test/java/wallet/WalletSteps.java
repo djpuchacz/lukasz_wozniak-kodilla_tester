@@ -56,30 +56,38 @@ public class WalletSteps implements En {
         });
 
         //  Prevent users from taking out more money than their wallet contains
-        When("I withdraw $200", () -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java8.PendingException();
+        Given("there is $10 in my wallet", () -> {
+            wallet.displayBalance(10);
+            Assert.assertEquals("Incorrect display of account balance",10,wallet.getInitialBalance());
         });
 
+        When("I withdraw $20", () -> {
+            wallet.withdrawFromWallet(20);
+        });
         Then("nothing should be dispensed", () -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java8.PendingException();
+            wallet.displayBalance(10);
+            wallet.withdrawFromWallet(20);
+            Assert.assertNotEquals("You don't have enough money in your wallet!",wallet.getInitialBalance(),wallet.withdrawFromWallet(20));
         });
 
         Then("I should be told that I don't have enough money in my wallet", () -> {
-            // Write code here that turns the phrase above into concrete actions
-            throw new io.cucumber.java8.PendingException();
+            wallet.displayBalance(10);
+            String comment = "You don't have enough money in your wallet !";
+            Assert.assertEquals(comment, wallet.withdrawFromWallet(20));
         });
 
 
         // Display balance
         Given("there is $100 in my wallet", () -> {
-            wallet.deposit(100);
-            //dodać kilka operacji
-        });
+            wallet.displayBalance(100);
+            Assert.assertEquals("Incorrect display of account balance",100,wallet.getInitialBalance());
 
+        });
+        When("I check the balance of my wallet", () -> {
+            wallet.getInitialBalance();
+        });
         Then("I should see that the balance is $100", () -> {
-            Assert.assertEquals("Your current balance is $100", wallet.currentBalance());
+            Assert.assertEquals("Incorrect wallet balance",100,wallet.getInitialBalance());
         });
 
     }
