@@ -10,5 +10,5 @@ import java.util.List;
 @Repository
 @Transactional
 public interface TaskRepository extends CrudRepository<Task, Integer> {
-    List<Task> findByDuration(int duration);
+    List<Task> findByDuration(int duration); //nazwa metody odpowiada nazwie zmiennnej która jest w encji
 }
