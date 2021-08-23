@@ -1,0 +1,106 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Rubik:400,500);
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Rubik', sans-serif;
+}
+h1, h2 {
+	font-family: 'Montserrat', sans-serif;
+}
+.container {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 1000px;
+	background-color: #FFF;
+}
+header {
+	padding: 30px;
+	background: url(https://static.pexels.com/photos/112811/pexels-photo-112811.jpeg);
+	width: auto;
+}
+
+header h1 {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 49px;
+	color: red;
+}
+header p, header h1 {
+	text-align: center;
+	color: black;
+	font-weight: #2c3e50;
+}
+section {
+	padding-right: 20%;
+	padding-left: 20%;
+}
+.about h2 {
+	margin-top: 60px;
+	font-size: 28px;
+	color: #2c3e50;
+}
+.interests h2 {
+	margin-top: 40px;
+	color: #3F88C5;
+}
+#formularz {
+        width:260px; /* ustawiamy szerokość formularza */
+        margin:0 auto; /* jeżeli nasz formularz ma ustawioną szerokość wyśrodkowujemy go */
+        background-color:#fff; /* dodajemy kolor tła naszemu formularzowi */
+        border:2px solid #ccc; /* dodajemy obramowanie o szerokości 2px */
+        border-radius:10px; /* zaokrąglamy tło naszego formularza */
+		padding:20px; /* dodajemy margines wewnątrz naszego formularza */
+        margin-top:20px; /* dodajemy margines górny naszego formularza */
+}
+
+#formularz label {
+    display:block;/* ustawiamy by label rozpoczynał się od nowej linii*/
+    margin-bottom:5px;/* dodajemy margines dolny */
+    font-weight:bold; /* pogrubiamy czcionkę */
+    text-transform: uppercase; /* zamieniamy wszystkie litery na duże */
+    font-size:12px; /* ustawiamy wielkość czcionki */
+    color:#555555; /* ustawiamy kolor czcionki */
+}
+
+#formularz textarea,
+#formularz input {
+	padding:5px; /* dodajemy margines wewnątrz naszego pola */
+	border-radius:3px; /* dodajemy zaokraglone rogi */
+	border:1px solid #ccc; /* dodajemy obramowanie */
+	margin-bottom:25px; /* dodajemy margines dolny */
+	width:245px; /* ustalamy szerokość */
+}
+
+#formularz input#submit {
+	width:255px; /* ustalamy szerokość */
+	cursor:pointer; /* zmieniamy kursor */
+	margin-bottom:0px;/* resetujemy margines dolny */
+}
+
+#formularz p.copy {
+	color:#555555; /* ustawiamy kolor czcionki */
+	margin-bottom:0px; /* resetujemy margines dolny */
+	font-size:12px; /* ustawiamy rozmiar czcionki */
+	text-align: center; /* wyśrodkowywujemy tekst */
+}
+
+#formularz p.copy a {
+	color:#555555;/* ustawiamy kolor czcionki */ 
+	text-decoration: none; /* usuwamy podkreślenie linku */
+	font-weight:bold; /* pogrubiamy czcionkę */
+}  
+footer {
+	margin-top: 60px;
+	padding: 30px;
+	background: black;
+}
+footer p {
+	text-align: center;
+	color: white;
+}
+footer a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #95a5a6;
+}
