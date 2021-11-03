@@ -11,6 +11,9 @@ public class GoogleExample {
         WebDriver driver = new ChromeDriver();                    // [2]
         driver.get("https://www.google.com");                     // [3]
 
+        //akceptacja ciasteczek:
+        WebElement cookiesField = driver.findElement(By.cssSelector("#L2AGLb > div"));
+        cookiesField.click();
         WebElement inputField = driver.findElement(By.name("q")); // [4]
         inputField.sendKeys("Kodilla");
     }

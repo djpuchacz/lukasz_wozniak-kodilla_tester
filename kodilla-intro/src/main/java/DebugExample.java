@@ -8,20 +8,18 @@ public class DebugExample {
 
         if (firstNumber > secondNumber) {
             subtractAndDisplay(firstNumber, secondNumber);
-        } else {
-            sumAndDisplay(firstNumber, secondNumber);
         }
+        else {
+                sumAndDisplay(firstNumber, secondNumber);
+            }
     }
 
-    private static void sumAndDisplay(int a, int b) {
+    public static void sumAndDisplay (int a, int b){
         int result = a + b;
-
         System.out.println(result);
     }
-
-    private static void subtractAndDisplay(int a, int b) {
+    public static void subtractAndDisplay (int a, int b){
         int result = a - b;
-
         System.out.println(result);
     }
 }

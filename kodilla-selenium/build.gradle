@@ -17,6 +17,7 @@ dependencies {
     compile(group: 'com.github.lewka', name: 'ocular', version: '1.0.5'){
         exclude group: "net.sf", module: "jargs"
     }
+
 }
 
 test {

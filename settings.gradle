@@ -18,4 +18,5 @@ include 'kodilla-google-selenium'
 include 'kodilla-cucumber'
 include 'kodilla-code-coverage'
 include 'kodilla-testcontainers'
+include 'final-project'
 
